@@ -1,0 +1,4 @@
+{
+  "_comment": "Feed URLs deliberately removed from the catalog. Matched by normalised URL, so an upstream re-sync can never reintroduce them. Entry: {\"feedURL\": \"https://...\", \"reason\": \"why\", \"date\": \"YYYY-MM-DD\"}. validate.py appends here when it prunes a feed after 3 consecutive monthly failures.",
+  "excluded": []
+}

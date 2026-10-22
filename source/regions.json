@@ -1,0 +1,105 @@
+{
+  "_comment": "Maps upstream country OPML file names (countries/with_category/<name>.opml) to ISO 3166-1 alpha-2 codes. 'title' is the English display name; the app localises from the code.",
+  "regions": {
+    "Australia": {
+      "id": "AU",
+      "title": "Australia"
+    },
+    "Bangladesh": {
+      "id": "BD",
+      "title": "Bangladesh"
+    },
+    "Brazil": {
+      "id": "BR",
+      "title": "Brazil"
+    },
+    "Canada": {
+      "id": "CA",
+      "title": "Canada"
+    },
+    "France": {
+      "id": "FR",
+      "title": "France"
+    },
+    "Germany": {
+      "id": "DE",
+      "title": "Germany"
+    },
+    "Hong Kong SAR China": {
+      "id": "HK",
+      "title": "Hong Kong"
+    },
+    "India": {
+      "id": "IN",
+      "title": "India"
+    },
+    "Indonesia": {
+      "id": "ID",
+      "title": "Indonesia"
+    },
+    "Iran": {
+      "id": "IR",
+      "title": "Iran"
+    },
+    "Ireland": {
+      "id": "IE",
+      "title": "Ireland"
+    },
+    "Italy": {
+      "id": "IT",
+      "title": "Italy"
+    },
+    "Japan": {
+      "id": "JP",
+      "title": "Japan"
+    },
+    "Mexico": {
+      "id": "MX",
+      "title": "Mexico"
+    },
+    "Myanmar (Burma)": {
+      "id": "MM",
+      "title": "Myanmar"
+    },
+    "Nigeria": {
+      "id": "NG",
+      "title": "Nigeria"
+    },
+    "Pakistan": {
+      "id": "PK",
+      "title": "Pakistan"
+    },
+    "Philippines": {
+      "id": "PH",
+      "title": "Philippines"
+    },
+    "Poland": {
+      "id": "PL",
+      "title": "Poland"
+    },
+    "Russia": {
+      "id": "RU",
+      "title": "Russia"
+    },
+    "South Africa": {
+      "id": "ZA",
+      "title": "South Africa"
+    },
+    "Spain": {
+      "id": "ES",
+      "title": "Spain"
+    },
+    "Ukraine": {
+      "id": "UA",
+      "title": "Ukraine"
+    },
+    "United Kingdom": {
+      "id": "GB",
+      "title": "United Kingdom"
+    },
+    "United States": {
+      "id": "US",
+      "title": "United States"
+    }
+  }
+}

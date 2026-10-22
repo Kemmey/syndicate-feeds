@@ -1,0 +1,254 @@
+{
+  "_comment": "Maps upstream OPML file names (recommended/with_category/<name>.opml) to our category ids. Ids are lowercase-kebab and stable forever: never rename or reuse one. 'symbol' is an SF Symbol name. Country lists (countries/with_category) all map to 'countryCategory'.",
+  "countryCategory": "news",
+  "categories": [
+    {
+      "id": "android",
+      "title": "Android",
+      "symbol": "candybarphone"
+    },
+    {
+      "id": "android-development",
+      "title": "Android Development",
+      "symbol": "chevron.left.forwardslash.chevron.right"
+    },
+    {
+      "id": "animals-wildlife",
+      "title": "Animals & Wildlife",
+      "symbol": "pawprint"
+    },
+    {
+      "id": "apple",
+      "title": "Apple",
+      "symbol": "apple.logo"
+    },
+    {
+      "id": "architecture",
+      "title": "Architecture",
+      "symbol": "building.columns"
+    },
+    {
+      "id": "beauty",
+      "title": "Beauty",
+      "symbol": "sparkles"
+    },
+    {
+      "id": "books",
+      "title": "Books",
+      "symbol": "books.vertical"
+    },
+    {
+      "id": "business-economy",
+      "title": "Business & Economy",
+      "symbol": "chart.line.uptrend.xyaxis"
+    },
+    {
+      "id": "cars",
+      "title": "Cars",
+      "symbol": "car"
+    },
+    {
+      "id": "chess",
+      "title": "Chess",
+      "symbol": "crown"
+    },
+    {
+      "id": "cricket",
+      "title": "Cricket",
+      "symbol": "cricket.ball"
+    },
+    {
+      "id": "cryptocurrency",
+      "title": "Cryptocurrency",
+      "symbol": "bitcoinsign.circle"
+    },
+    {
+      "id": "cyber-security",
+      "title": "Cyber Security",
+      "symbol": "lock.shield"
+    },
+    {
+      "id": "diy",
+      "title": "DIY",
+      "symbol": "hammer"
+    },
+    {
+      "id": "environment",
+      "title": "Environment",
+      "symbol": "leaf"
+    },
+    {
+      "id": "fashion",
+      "title": "Fashion",
+      "symbol": "tshirt"
+    },
+    {
+      "id": "food",
+      "title": "Food",
+      "symbol": "fork.knife"
+    },
+    {
+      "id": "football",
+      "title": "Football",
+      "symbol": "soccerball"
+    },
+    {
+      "id": "funny",
+      "title": "Funny",
+      "symbol": "face.smiling"
+    },
+    {
+      "id": "gaming",
+      "title": "Gaming",
+      "symbol": "gamecontroller"
+    },
+    {
+      "id": "history",
+      "title": "History",
+      "symbol": "scroll"
+    },
+    {
+      "id": "interior-design",
+      "title": "Interior Design",
+      "symbol": "sofa"
+    },
+    {
+      "id": "ios-development",
+      "title": "iOS Development",
+      "symbol": "swift"
+    },
+    {
+      "id": "memes",
+      "title": "Memes",
+      "symbol": "theatermasks"
+    },
+    {
+      "id": "movies",
+      "title": "Movies",
+      "symbol": "film"
+    },
+    {
+      "id": "music",
+      "title": "Music",
+      "symbol": "music.note"
+    },
+    {
+      "id": "nature",
+      "title": "Nature",
+      "symbol": "mountain.2"
+    },
+    {
+      "id": "news",
+      "title": "News",
+      "symbol": "newspaper"
+    },
+    {
+      "id": "personal-finance",
+      "title": "Personal Finance",
+      "symbol": "banknote"
+    },
+    {
+      "id": "photography",
+      "title": "Photography",
+      "symbol": "camera"
+    },
+    {
+      "id": "programming",
+      "title": "Programming",
+      "symbol": "curlybraces"
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "symbol": "atom"
+    },
+    {
+      "id": "space",
+      "title": "Space",
+      "symbol": "moon.stars"
+    },
+    {
+      "id": "sports",
+      "title": "Sports",
+      "symbol": "sportscourt"
+    },
+    {
+      "id": "startups",
+      "title": "Startups",
+      "symbol": "lightbulb"
+    },
+    {
+      "id": "tech",
+      "title": "Tech",
+      "symbol": "cpu"
+    },
+    {
+      "id": "television",
+      "title": "Television",
+      "symbol": "tv"
+    },
+    {
+      "id": "tennis",
+      "title": "Tennis",
+      "symbol": "tennis.racket"
+    },
+    {
+      "id": "travel",
+      "title": "Travel",
+      "symbol": "airplane"
+    },
+    {
+      "id": "ui-ux",
+      "title": "UI & UX",
+      "symbol": "paintbrush"
+    },
+    {
+      "id": "web-development",
+      "title": "Web Development",
+      "symbol": "globe"
+    }
+  ],
+  "upstream": {
+    "Android": "android",
+    "Android Development": "android-development",
+    "Animal & Wildlife": "animals-wildlife",
+    "Apple": "apple",
+    "Architecture": "architecture",
+    "Beauty": "beauty",
+    "Books": "books",
+    "Business & Economy": "business-economy",
+    "Cars": "cars",
+    "Chess": "chess",
+    "Cricket": "cricket",
+    "Cryptocurrency": "cryptocurrency",
+    "Cyber security": "cyber-security",
+    "DIY": "diy",
+    "Environment": "environment",
+    "Fashion": "fashion",
+    "Food": "food",
+    "Football": "football",
+    "Funny": "funny",
+    "Gaming": "gaming",
+    "History": "history",
+    "Interior design": "interior-design",
+    "iOS Development": "ios-development",
+    "Memes": "memes",
+    "Movies": "movies",
+    "Music": "music",
+    "Nature": "nature",
+    "News": "news",
+    "Personal finance": "personal-finance",
+    "Photography": "photography",
+    "Programming": "programming",
+    "Science": "science",
+    "Space": "space",
+    "Sports": "sports",
+    "Startups": "startups",
+    "Tech": "tech",
+    "Television": "television",
+    "Tennis": "tennis",
+    "Travel": "travel",
+    "UI - UX": "ui-ux",
+    "Web Development": "web-development"
+  }
+}

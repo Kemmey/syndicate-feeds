@@ -1,0 +1,42 @@
+name: Update catalog
+
+# Manual only: run it from the Actions tab (or `gh workflow run update-catalog.yml`).
+on:
+  workflow_dispatch:
+    inputs:
+      max_failure_rate:
+        description: "Abort (publish nothing) if more than this share of feeds fail with 404/410/no feed"
+        required: false
+        default: "0.20"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-catalog
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate feeds
+        run: python3 scripts/validate.py --max-failure-rate "${{ inputs.max_failure_rate || '0.20' }}"
+
+      - name: Build dist/feeds-v1.json
+        run: python3 scripts/update.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist state reports source/exclusions.json
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+            exit 0
+          fi
+          git commit -m "catalog: update $(date -u +%Y-%m-%d)"
+          git push

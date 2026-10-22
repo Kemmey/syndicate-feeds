@@ -1,0 +1,49 @@
+{
+  "_comment": "Our own additions on top of the upstream OPML. One object per feed: feedURL and title required; categories (ids from categories.json) required; regions (ISO 3166-1 alpha-2), siteURL, summary, language optional. An entry whose feedURL matches an upstream feed overrides its title/summary/siteURL/language and adds its categories/regions.",
+  "feeds": [
+    {
+      "title": "NASA",
+      "feedURL": "https://www.nasa.gov/feed/",
+      "siteURL": "https://www.nasa.gov",
+      "summary": "News, images and mission updates from NASA.",
+      "categories": [
+        "space",
+        "science"
+      ],
+      "language": "en"
+    },
+    {
+      "title": "xkcd",
+      "feedURL": "https://xkcd.com/rss.xml",
+      "siteURL": "https://xkcd.com",
+      "summary": "A webcomic of romance, sarcasm, math, and language.",
+      "categories": [
+        "funny",
+        "science"
+      ],
+      "language": "en"
+    },
+    {
+      "title": "Swift.org",
+      "feedURL": "https://www.swift.org/atom.xml",
+      "siteURL": "https://www.swift.org",
+      "summary": "News and announcements from the Swift project.",
+      "categories": [
+        "ios-development",
+        "programming"
+      ],
+      "language": "en"
+    },
+    {
+      "title": "Ars Technica",
+      "feedURL": "https://feeds.arstechnica.com/arstechnica/index",
+      "siteURL": "https://arstechnica.com",
+      "summary": "Technology news, analysis and reviews.",
+      "categories": [
+        "tech",
+        "science"
+      ],
+      "language": "en"
+    }
+  ]
+}
