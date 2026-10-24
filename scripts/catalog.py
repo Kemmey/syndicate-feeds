@@ -193,7 +193,11 @@ def load_sources(strict: bool = True) -> list[dict]:
     reg_map = load_region_map()["regions"]
     known_cats = {c["id"] for c in cat_map["categories"]}
     known_regions = {r["id"] for r in reg_map.values()}
-    excluded = {normalise_url(e["feedURL"]) for e in load_exclusions().get("excluded", [])}
+    exclusions = load_exclusions()
+    excluded = {normalise_url(e["feedURL"]) for e in exclusions.get("excluded", [])}
+    # Whole countries removed for good: their upstream list is skipped and
+    # no feed tagged with them is published, wherever else it is listed.
+    excluded_regions = {r["id"] for r in exclusions.get("excludedRegions", [])}
 
     merged: dict[str, dict] = {}
     problems: list[str] = []
@@ -247,6 +251,8 @@ def load_sources(strict: bool = True) -> list[dict]:
         if region is None:
             problems.append(f"unmapped upstream country {country!r} — add it to source/regions.json")
             continue
+        if region["id"] in excluded_regions:
+            continue
         for item in parse_opml(os.path.join(COUNTRIES_DIR, name)):
             add(item, {cat_map["countryCategory"]}, {region["id"]}, f"countries/{country}", False)
 
@@ -258,6 +264,8 @@ def load_sources(strict: bool = True) -> list[dict]:
         if unknown or not cats or not item.get("feedURL") or not item.get("title"):
             problems.append(f"invalid custom feed {item.get('feedURL')!r}: unknown ids {sorted(unknown)} or missing fields")
             continue
+        if regs & excluded_regions:
+            continue
         add(item, cats, regs, "custom", True)
 
     if problems:
@@ -266,7 +274,7 @@ def load_sources(strict: bool = True) -> list[dict]:
         if strict and any(p.startswith(("unmapped", "invalid")) for p in problems):
             raise SystemExit("error: source problems above must be fixed first")
 
-    return list(merged.values())
+    return [entry for entry in merged.values() if not (entry["regions"] & excluded_regions)]
 
 
 def load_state() -> dict:

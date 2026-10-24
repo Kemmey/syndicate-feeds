@@ -39,9 +39,9 @@ state/feed-health.json  ──────────┘   written by validate.
 | Path | What it is |
 | --- | --- |
 | `source/categories.json` | Maps each upstream topic file (e.g. `UI - UX.opml`) to a stable category id, title and SF Symbol. Ids never change once published. Country lists all map to `news`. |
-| `source/regions.json` | Maps each upstream country file to its ISO 3166-1 alpha-2 code. |
+| `source/regions.json` | Maps each upstream country file to its ISO 3166-1 alpha-2 code. An entry with no upstream file (Denmark) declares a country only `custom-feeds.json` fills. |
 | `source/custom-feeds.json` | Feeds Syndicate adds on top of upstream (or metadata overrides for an upstream feed with the same URL). |
-| `source/exclusions.json` | Feeds deliberately removed. Matched by normalised URL, so an upstream re-sync can never bring them back. |
+| `source/exclusions.json` | Feeds deliberately removed (`excluded`, matched by normalised URL, so an upstream re-sync can never bring them back), and whole countries removed (`excludedRegions`, by ISO code: the upstream list is skipped and no feed tagged with that country is published — Russia, since 2026-10-24). |
 | `state/feed-health.json` | Per-feed health record written by `validate.py`: status, consecutive failures, failing-run dates, canonical URL, site URL, language, last HTTP status. |
 | `scripts/validate.py` | Health-checks every feed and updates the state. |
 | `scripts/update.py` | Builds `dist/feeds-v1.json`. |
@@ -127,7 +127,8 @@ Open a pull request that adds an entry to `source/custom-feeds.json`:
 
 `title`, `feedURL` and at least one category id from `source/categories.json`
 are required. Use `regions` (ISO 3166-1 alpha-2) only for country-specific
-news. To remove a feed, add it to `source/exclusions.json` with a reason.
+feeds; a country with no upstream list needs an entry in `source/regions.json`
+first. To remove a feed, add it to `source/exclusions.json` with a reason.
 
 ## Catalog format (`dist/feeds-v1.json`)
 

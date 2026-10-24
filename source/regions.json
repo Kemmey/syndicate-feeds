@@ -1,5 +1,5 @@
 {
-  "_comment": "Maps upstream country OPML file names (countries/with_category/<name>.opml) to ISO 3166-1 alpha-2 codes. 'title' is the English display name; the app localises from the code.",
+  "_comment": "Maps upstream country OPML file names (countries/with_category/<name>.opml) to ISO 3166-1 alpha-2 codes. 'title' is the English display name; the app localises from the code. An entry with no upstream file of that name (e.g. 'Denmark') declares a country that only source/custom-feeds.json fills.",
   "regions": {
     "Australia": {
       "id": "AU",
@@ -16,6 +16,10 @@
     "Canada": {
       "id": "CA",
       "title": "Canada"
+    },
+    "Denmark": {
+      "id": "DK",
+      "title": "Denmark"
     },
     "France": {
       "id": "FR",

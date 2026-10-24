@@ -1,4 +1,77 @@
 {
-  "_comment": "Feed URLs deliberately removed from the catalog. Matched by normalised URL, so an upstream re-sync can never reintroduce them. Entry: {\"feedURL\": \"https://...\", \"reason\": \"why\", \"date\": \"YYYY-MM-DD\"}. validate.py appends here when it prunes a feed after 3 consecutive monthly failures.",
-  "excluded": []
+  "_comment": "Feeds and countries deliberately removed from the catalog. 'excluded': feed URLs, matched by normalised URL, so an upstream re-sync can never reintroduce them; entry {\"feedURL\": \"https://...\", \"reason\": \"why\", \"date\": \"YYYY-MM-DD\"}. validate.py appends here when it prunes a feed after 3 consecutive monthly failures. 'excludedRegions': whole countries, by ISO 3166-1 alpha-2 code; entry {\"id\": \"XX\", \"reason\": \"why\", \"date\": \"YYYY-MM-DD\"}. Their upstream country list is skipped and no feed tagged with them is published.",
+  "excludedRegions": [
+    {
+      "id": "RU",
+      "reason": "Removed at the maintainer's request (RumskrotSyndicate#362): no Russia category and no Russian feeds.",
+      "date": "2026-10-24"
+    }
+  ],
+  "excluded": [
+    {
+      "feedURL": "https://lenta.ru/rss",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "https://www.vesti.ru/vesti.rss",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "https://www.gazeta.ru/export/rss/first.xml",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "https://www.mk.ru/rss/index.xml",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "https://rg.ru/xml/index.xml",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "https://rss.newsru.com/top/big/",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "https://www.rt.com/rss/",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "https://meduza.io/rss/all",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "https://russia-insider.com/en/all-content/rss",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "http://tass.com/rss/v2.xml",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "https://www.themoscowtimes.com/rss/news",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "https://www.kommersant.ru/RSS/main.xml",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    },
+    {
+      "feedURL": "https://www.pravdareport.com/export.xml",
+      "reason": "Russian feed, removed with the Russia list (RumskrotSyndicate#362).",
+      "date": "2026-10-24"
+    }
+  ]
 }
