@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "revision": 2,
+  "rules": [
+    {
+      "domain": "9to5mac.com",
+      "content": [
+        "div.article-content",
+        "div.post-content",
+        "article .entry-content"
+      ],
+      "title": [
+        "h1.post-title",
+        "h1.article-title"
+      ],
+      "clean": [
+        ".wp-block-embed",
+        ".related-posts",
+        ".newsletter-signup",
+        ".ad-unit"
+      ]
+    },
+    {
+      "domain": "daringfireball.net",
+      "content": [
+        "div.article",
+        "dl.linkedlist dd",
+        "div#Main"
+      ],
+      "title": [
+        "h1",
+        "div.article h1"
+      ],
+      "clean": [
+        ".footer",
+        "#Footer"
+      ]
+    },
+    {
+      "domain": "xkcd.com",
+      "content": [
+        "div#comic"
+      ],
+      "title": [
+        "div#ctitle"
+      ],
+      "clean": []
+    },
+    {
+      "domain": "arstechnica.com",
+      "content": [
+        "div.post-content",
+        "section.article-content"
+      ],
+      "title": [
+        "h1.heading"
+      ],
+      "clean": [
+        ".ad-wrapper",
+        ".related-stories",
+        ".site-promo"
+      ]
+    },
+    {
+      "domain": "nshipster.com",
+      "content": [
+        "article",
+        "main article"
+      ],
+      "title": [
+        "h1"
+      ],
+      "clean": [
+        ".footnotes",
+        ".author"
+      ]
+    },
+    {
+      "domain": "swiftbysundell.com",
+      "content": [
+        "div.article-body",
+        "article .content"
+      ],
+      "title": [
+        "h1"
+      ],
+      "clean": [
+        ".sponsor",
+        ".newsletter"
+      ]
+    },
+    {
+      "domain": "macrumors.com",
+      "content": [
+        "article.js-article",
+        "div.article-body"
+      ],
+      "title": [
+        "h1"
+      ],
+      "clean": [
+        "[class*=titlebar]",
+        "[class*=byline]",
+        "[class*=footer]",
+        "[class*=textRow__title]",
+        "[class*=product]",
+        "[class*=yt-facade]",
+        "[class*=storyRail]",
+        "[class^=heading--]",
+        "[class*=related]",
+        "[class*=newsletter]"
+      ]
+    },
+    {
+      "domain": "macstories.net",
+      "content": [
+        "div.article-content",
+        "div.entry-content"
+      ],
+      "title": [
+        "h1.headline",
+        "h1.entry-title"
+      ],
+      "clean": [
+        ".club-promo",
+        ".related"
+      ]
+    },
+    {
+      "domain": "theverge.com",
+      "content": [
+        "div.article-body-component",
+        "div.c-entry-content"
+      ],
+      "title": [
+        "h1"
+      ],
+      "clean": [
+        ".c-related-list",
+        ".c-newsletter_signup"
+      ]
+    },
+    {
+      "domain": "polygon.com",
+      "content": [
+        "div.c-entry-content",
+        "div.article-body-component"
+      ],
+      "title": [
+        "h1"
+      ],
+      "clean": [
+        ".c-related-list"
+      ]
+    },
+    {
+      "domain": "nikonrumors.com",
+      "content": [
+        "div.entry-content"
+      ],
+      "title": [
+        "h1"
+      ],
+      "clean": [
+        ".yarpp",
+        ".yarpp-related",
+        "#single-insert",
+        ".sharedaddy"
+      ]
+    },
+    {
+      "domain": "explosm.net",
+      "content": [
+        "div#comic div[class*=MainComic__ComicImage]",
+        "div#comic div[class*=MainComic__Container]"
+      ],
+      "title": [
+        "h1"
+      ],
+      "clean": [
+        "[class*=ComicSelector]",
+        "[class*=Share]"
+      ]
+    }
+  ]
+}

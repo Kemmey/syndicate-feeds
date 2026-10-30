@@ -165,6 +165,12 @@ def main() -> int:
           f"(sources {stats['sources']}, quarantined {stats['quarantined']}, repaired {stats['repaired']}, "
           f"merged by canonical URL {stats['mergedByCanonical']}"
           f"{', unchanged' if published_at != now else ''})")
+
+    # Syndicate#417: grade the app's reader against the rebuilt catalog and
+    # publish its site rules. Skipped (with a message) off macOS.
+    if "--no-reader-probe" not in sys.argv:
+        import reader_probe
+        reader_probe.main([])
     return 0
 
 

@@ -100,6 +100,51 @@ On GitHub, the **Update catalog** workflow (Actions tab → *Update catalog* →
 *Run workflow*) runs both scripts and commits `dist/`, `state/`, `reports/` and
 `source/exclusions.json` when they changed. It only runs when started by hand.
 
+## Reader quality and reader rules
+
+Syndicate's article reader is generic — a Readability scorer plus the
+platform hints every site shares (CMS containers such as WordPress
+`.entry-content`, JSON-LD `articleBody`, AMP editions) — with hand-written
+**site rules** only where that still fails. Both are checked against this
+catalog on every rebuild:
+
+```sh
+python3 scripts/update.py                     # rebuild, then grade the reader (macOS)
+python3 scripts/reader_probe.py               # the grading step on its own
+python3 scripts/reader_probe.py --rules-only  # publish the rules, no probe
+python3 scripts/update.py --no-reader-probe   # rebuild only
+```
+
+`scripts/reader_probe.py` builds and runs `syndicate-reader-probe`, a CLI in
+the RumskrotSyndicate repository (`Packages/SyndicateKit`) that links the
+same reader module the app ships. It reads `dist/feeds-v1.json` plus Kim's
+own library (`Fixtures/KimLibrary.opml` there — always included), fetches the
+three newest articles of every feed live, and grades each extraction:
+words versus the feed's own text, leftover chrome (cookie, newsletter,
+share text), pictures kept, and whether a site rule or the generic engine
+found the body. Output:
+
+| Path | What it is |
+| --- | --- |
+| `reports/reader-quality-<date>.json` | Every feed and article, graded. |
+| `reports/reader-quality-<date>.md`, `reports/reader-quality-latest.md` | Summary per source, the change since the previous run, worst feeds first. |
+| `source/reader-rules.json` | **The one hand-edited copy of the site rules** (schema version 1, a `revision`, a list of `{domain, content, title, clean}` CSS selectors). |
+
+When `source/reader-rules.json` differs from the published copy, the script
+bumps `revision` and writes it to the website repository
+(`static/apps/rumskrot-syndicate/reader-rules.v1.json`, served at
+<https://danskrumskrot.com/apps/rumskrot-syndicate/reader-rules.v1.json>) and
+to the app's bundled fallback (`SiteRules.json`). Commit and push those
+repositories as a separate step. The app pulls the published file at most
+once a day (on activation and in its background refresh) with
+`If-None-Match`, validates it in full and ignores anything invalid, older
+than its bundled copy, or of an unknown schema version. Add a rule only for
+a site the generic engine still reads badly, together with a captured-page
+fixture test in RumskrotSyndicate. Repositories are found as siblings of
+this one, or via `SYNDICATE_REPO` and `WEBSITE_REPO`.
+
+The probe needs macOS and Swift; the GitHub workflow skips it with a message.
+
 ## Syncing with upstream
 
 Use GitHub's **Sync fork** button (or `git pull upstream master`), then run the
